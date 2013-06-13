@@ -1,0 +1,31 @@
+h1.logo Pagos Movistar
+
+
+form action="/report" method="post"
+  div.options
+    - unless @options.empty?
+      fieldset.select-all
+        label
+          input type="checkbox" name="js-selectAll" Select all
+    - @options.each do |application, products|
+        
+        fieldset.application.collapsed
+          legend
+            label
+              input type="checkbox" name=application =application
+            span.icon.icon-plus-sign 
+          div.products
+            - products.each do |product|
+              label
+                input type="checkbox" name=product[:name] =product[:description]
+
+  div.center
+    input.btn.btn-big.btn-success type="submit" value="Generate Report"
+
+p.pull-right.result-count
+  span.result-current-count
+  | /
+  span.result-total-count
+  |  results
+
+div.results.clear

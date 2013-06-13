@@ -1,0 +1,104 @@
+@import "base";
+
+.options {
+  overflow: auto;
+  padding: 20px;
+  background-color: $lightGray;
+  background-color: rgba(lighten($baseColor, 10%), 0.3);
+  border-radius: 5px;
+
+  input[type="checkbox"] {
+    -webkit-user-select: text;  /* Chrome all / Safari all */
+    -moz-user-select: text;     /* Firefox all */
+    -ms-user-select: text;      /* IE 10+ */
+
+    /* No support for these yet, use at own risk */
+    -o-user-select: text;
+    user-select: text;
+    border-radius: 2px;
+    border: 0;
+
+  }
+
+  .select-all {
+    border: none;
+    margin: 3px 5px;
+  }
+
+  legend {
+    text-transform: capitalize;
+    font: bold 18px/1 'Georgia', serif;
+    color: darken($baseColor, 30%);
+
+    label {
+      margin-right: 5px;
+    }
+
+    .icon {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+
+  .application {
+    border: 1px solid darken($baseColor, 30%);
+    margin-bottom: 7px;
+
+
+    &.collapsed {
+
+      border: none;
+
+      .products {
+        display: none;
+      }
+    }
+
+  }
+
+  .products label {
+    padding: 3px 5px;
+    float: left;
+    display: block;
+    width: ($contentWidth - 90) / 2;
+  }
+
+}
+
+.btn {
+  margin: 15px 0 10px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+
+  border-radius: 4px;
+
+
+  &.btn-big {
+    font-size: 20px;
+  }
+
+  &.btn-success {
+    background-color: $success;
+    border-top: 2px solid lighten($success, 20%);
+    border-bottom: 2px solid darken($success, 10%);
+
+    &:hover{
+      background-color: lighten($success, 10%);
+    }
+
+    &:active {
+      border-bottom: 2px solid lighten($success, 20%);
+      border-top: 2px solid darken($success, 10%);
+      background-color: $success;
+    }
+
+    &:disabled, &.disabled {
+      border: none;
+      background-color: darken($success, 10%);
+    }
+  }
+}
+
+
